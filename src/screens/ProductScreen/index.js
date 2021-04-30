@@ -6,6 +6,7 @@ import product from '../../data/product';
 import {Picker} from '@react-native-picker/picker';
 import QuantitySelector from '../../components/QuantitySelector';
 import Button from '../../components/Button';
+import ImageCarousel from '../../components/ImageCarousel';
 
 
 const ProductScreen = () => {
@@ -18,6 +19,8 @@ const ProductScreen = () => {
 
 
             {/* Image carousel */}
+
+                <ImageCarousel images={product.images} />
 
             {/* Option selector */}
             <Picker
@@ -50,8 +53,15 @@ const ProductScreen = () => {
 
             {/* Button */}
                     
-                    <Button text={'Add To Cart'} onPress={() => {console.warn('Add to cart')}} />
-                    <Button text={'Buy Now'} onPress={() => {console.warn('Buy Now')}} />
+                    <Button 
+                        containerStyles={{backgroundColor: '#e3c985'}}
+                        text={'Add To Cart'} 
+                        onPress={() => {console.warn('Add to cart')}}
+                     />
+                    <Button 
+                        text={'Buy Now'} 
+                        onPress={() => {console.warn('Buy Now')}} 
+                    />
 
 
 

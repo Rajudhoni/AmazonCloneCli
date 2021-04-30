@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, Pressable, Text, View } from 'react-native'
 
-const Button = ({text, onPress}) => {
+const Button = ({text, onPress, containerStyles}) => {
     return (
-        <Pressable onPress={onPress} style={styles.root}>
+        <Pressable onPress={onPress} style={[styles.root, containerStyles]}>
             <Text style={styles.text}>{text}</Text>
         </Pressable>
     )
