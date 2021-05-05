@@ -6,7 +6,8 @@ import ProductItem from '../../components/ProductItem';
 import products from '../../data/products';
 
 
-const HomeScreen = () => {
+const HomeScreen = ({searchValue}) => {
+    console.log("Search Value", searchValue);
     return (
         <View style={styles.page}>
            

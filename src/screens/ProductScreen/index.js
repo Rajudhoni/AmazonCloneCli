@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 
 import product from '../../data/product';
 
@@ -7,14 +7,18 @@ import {Picker} from '@react-native-picker/picker';
 import QuantitySelector from '../../components/QuantitySelector';
 import Button from '../../components/Button';
 import ImageCarousel from '../../components/ImageCarousel';
+import  {useRoute} from '@react-navigation/native';
 
 
 const ProductScreen = () => {
     const [selectedOption, setSelectedOption] = useState(product.options ? product.options[0] : null);
     const [quantity, setQuantity] = useState(1);
 
+    const Route = useRoute();
+    console.log("Route Param Value: ", Route.params.id)
+
     return (
-        <View style={styles.root}>
+        <ScrollView style={styles.root}>
             <Text style={styles.title}>{product.title}</Text>
 
 
@@ -65,7 +69,7 @@ const ProductScreen = () => {
 
 
 
-        </View>
+        </ScrollView>
     )
 }
 
@@ -73,6 +77,7 @@ export default ProductScreen
 
 const styles = StyleSheet.create({
     root:{
+        flex: 1,
         padding: 10,
         backgroundColor: 'white',
     },
