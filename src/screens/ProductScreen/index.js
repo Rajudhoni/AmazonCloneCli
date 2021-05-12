@@ -46,7 +46,7 @@ const ProductScreen = () => {
             userSub: authUserInfo.attributes.sub,
             quantity,
             option: selectedOption,
-            productID: product.id,
+            ProductID: product.id,
           });
 
           DataStore.save(newCartProduct);
