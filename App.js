@@ -1,15 +1,18 @@
 import React from 'react';
-import { View, Text, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { View, Text, SafeAreaView, StatusBar, StyleSheet, } from 'react-native';
 import 'react-native-gesture-handler';
 import Router from './src/router';
 
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native'
 
-import AddressScreen from './src/screens/AddressScreen';
-import HomeScreen from './src/screens/HomeScreen'
-import ProductScreen from './src/screens/ProductScreen'
-import ShoppingCartScreen from './src/screens/ShoppingCartScreen';
+import config from './src/aws-exports';
+Amplify.configure(config);
+
 
 const App = () => {
+
+
   return (
     <>
 
@@ -28,7 +31,7 @@ const App = () => {
   )
 }
 
-export default App;
+export default withAuthenticator(App)
 
 
 

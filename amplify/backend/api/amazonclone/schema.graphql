@@ -1,0 +1,45 @@
+ type Product  @model {
+    id: ID!
+    title: String!
+    description: String
+    image: String!
+    images: [String!]!
+    options: [String!]
+    avgRating: Float
+    ratings: Int
+    price: Float!
+    oldPrice: Float
+
+ }
+
+
+ type CartProduct @model {
+    id: ID!
+    userSub: String!
+    quantity: Int!
+    option: String
+
+    ProductID: ID!
+    product: Product @connection(fields: ["ProductID"])
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
